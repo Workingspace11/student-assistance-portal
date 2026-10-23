@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="id">
 <head>
@@ -5,42 +6,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#173a73">
   <meta name="description" content="Student Assistance Portal — portal akademik dosen dan mahasiswa.">
+
   <link rel="manifest" href="./manifest.json">
-  <link rel="icon" href="./icons/icon-192.png">
-  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
   <link rel="stylesheet" href="./styles.css">
+
   <title>Student Assistance Portal</title>
 </head>
 <body>
   <main class="app-frame">
+
+    <!-- Opening screen -->
     <section class="splash" id="splash" aria-label="Membuka aplikasi">
-      <div class="logo-mark" aria-hidden="true">SAP</div>
+      <img
+        class="logo-mark"
+        src="./icons/icon-512.png"
+        alt="Student Assistance Portal"
+        aria-hidden="true"
+      >
+
       <div class="splash-title">Student Assistance Portal</div>
-      <div class="loader" aria-hidden="true"><span></span></div>
-      <p class="splash-note" id="splashNote">Menyiapkan portal akademik…</p>
+
+      <div class="loader" aria-hidden="true">
+        <span></span>
+      </div>
+
+      <p class="splash-note" id="splashNote">
+        Menyiapkan portal akademik…
+      </p>
     </section>
 
-    <section class="install-layer hidden" id="installLayer" role="dialog" aria-modal="true" aria-labelledby="installTitle">
+    <!-- Install prompt -->
+    <section
+      class="install-layer hidden"
+      id="installLayer"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="installTitle"
+    >
       <div class="install-card">
-        <div class="mini-logo" aria-hidden="true">SAP</div>
+        <img
+          class="mini-logo"
+          src="./icons/icon-192.png"
+          alt=""
+          aria-hidden="true"
+        >
+
         <p class="eyebrow">LEBIH PRAKTIS</p>
-        <h1 id="installTitle">Pasang aplikasi di perangkatmu</h1>
-        <p class="install-copy" id="installCopy">Tambahkan Student Assistance Portal ke layar utama agar lebih mudah dibuka.</p>
-        <button class="primary-action" id="installButton" type="button">Install sekarang</button>
-        <button class="secondary-action" id="continueButton" type="button">Lanjut ke halaman login</button>
-        <p class="install-help" id="installHelp">Pemasangan tidak mengubah akun atau data portal.</p>
+
+        <h1 id="installTitle">
+          Pasang aplikasi di perangkatmu
+        </h1>
+
+        <p class="install-copy" id="installCopy">
+          Tambahkan Student Assistance Portal ke layar utama
+          agar lebih mudah dibuka.
+        </p>
+
+        <button
+          class="primary-action"
+          id="installButton"
+          type="button"
+        >
+          Install sekarang
+        </button>
+
+        <button
+          class="secondary-action"
+          id="continueButton"
+          type="button"
+        >
+          Lanjut ke halaman login
+        </button>
+
+        <p class="install-help" id="installHelp">
+          Pemasangan tidak mengubah akun atau data portal.
+        </p>
       </div>
     </section>
 
-    <section class="error-layer hidden" id="errorLayer" role="alert">
+    <!-- Connection error -->
+    <section
+      class="error-layer hidden"
+      id="errorLayer"
+      role="alert"
+    >
       <div class="error-card">
-        <div class="mini-logo" aria-hidden="true">SAP</div>
+        <img
+          class="mini-logo"
+          src="./icons/icon-192.png"
+          alt=""
+          aria-hidden="true"
+        >
+
         <h1>Portal belum terhubung</h1>
-        <p id="errorText">URL Google Apps Script belum diatur di config.js.</p>
-        <button class="primary-action" id="retryButton" type="button">Coba lagi</button>
+
+        <p id="errorText">
+          URL Google Apps Script belum diatur di config.js.
+        </p>
+
+        <button
+          class="primary-action"
+          id="retryButton"
+          type="button"
+        >
+          Coba lagi
+        </button>
       </div>
     </section>
+
   </main>
+
   <script src="./config.js"></script>
   <script src="./app.js"></script>
 </body>
