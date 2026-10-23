@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173a73">
+  <meta name="description" content="Student Assistance Portal untuk pengelolaan kelas, tugas, dan asistensi.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Student Assistance Portal</title>
+</head>
+<body>
+  <main class="shell">
+    <div class="brand-mark" aria-hidden="true">SAP</div>
+    <p class="eyebrow">STUDENT ASSISTANCE PORTAL</p>
+    <h1>Portal akademik dalam satu tempat.</h1>
+    <p class="intro">Kelola kelas, mata kuliah, mahasiswa, tugas, dan proses asistensi melalui portal yang sudah digunakan.</p>
+
+    <section class="status-card" aria-live="polite">
+      <span class="status-dot"></span>
+      <div>
+        <strong>Portal siap dibuka</strong>
+        <p>Login dan data tetap ditangani oleh Google Apps Script.</p>
+      </div>
+    </section>
+
+    <a class="primary-action" id="openPortal" href="#" rel="noopener">
+      Buka Student Assistance Portal <span aria-hidden="true">↗</span>
+    </a>
+    <p class="hint" id="setupHint">Tautan portal perlu diisi satu kali di file <code>config.js</code>.</p>
+
+    <footer>
+      <span>Student Assistance Portal</span>
+      <span>Progressive Web App</span>
+    </footer>
+  </main>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
