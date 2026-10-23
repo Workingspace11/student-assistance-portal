@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#173a73">
-  <meta name="description" content="Student Assistance Portal untuk pengelolaan kelas, tugas, dan asistensi.">
+  <meta name="description" content="Student Assistance Portal — portal akademik dosen dan mahasiswa.">
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="./icons/icon-192.png">
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
@@ -12,29 +12,34 @@
   <title>Student Assistance Portal</title>
 </head>
 <body>
-  <main class="shell">
-    <div class="brand-mark" aria-hidden="true">SAP</div>
-    <p class="eyebrow">STUDENT ASSISTANCE PORTAL</p>
-    <h1>Portal akademik dalam satu tempat.</h1>
-    <p class="intro">Kelola kelas, mata kuliah, mahasiswa, tugas, dan proses asistensi melalui portal yang sudah digunakan.</p>
+  <main class="app-frame">
+    <section class="splash" id="splash" aria-label="Membuka aplikasi">
+      <div class="logo-mark" aria-hidden="true">SAP</div>
+      <div class="splash-title">Student Assistance Portal</div>
+      <div class="loader" aria-hidden="true"><span></span></div>
+      <p class="splash-note" id="splashNote">Menyiapkan portal akademik…</p>
+    </section>
 
-    <section class="status-card" aria-live="polite">
-      <span class="status-dot"></span>
-      <div>
-        <strong>Portal siap dibuka</strong>
-        <p>Login dan data tetap ditangani oleh Google Apps Script.</p>
+    <section class="install-layer hidden" id="installLayer" role="dialog" aria-modal="true" aria-labelledby="installTitle">
+      <div class="install-card">
+        <div class="mini-logo" aria-hidden="true">SAP</div>
+        <p class="eyebrow">LEBIH PRAKTIS</p>
+        <h1 id="installTitle">Pasang aplikasi di perangkatmu</h1>
+        <p class="install-copy" id="installCopy">Tambahkan Student Assistance Portal ke layar utama agar lebih mudah dibuka.</p>
+        <button class="primary-action" id="installButton" type="button">Install sekarang</button>
+        <button class="secondary-action" id="continueButton" type="button">Lanjut ke halaman login</button>
+        <p class="install-help" id="installHelp">Pemasangan tidak mengubah akun atau data portal.</p>
       </div>
     </section>
 
-    <a class="primary-action" id="openPortal" href="#" rel="noopener">
-      Buka Student Assistance Portal <span aria-hidden="true">↗</span>
-    </a>
-    <p class="hint" id="setupHint">Tautan portal perlu diisi satu kali di file <code>config.js</code>.</p>
-
-    <footer>
-      <span>Student Assistance Portal</span>
-      <span>Progressive Web App</span>
-    </footer>
+    <section class="error-layer hidden" id="errorLayer" role="alert">
+      <div class="error-card">
+        <div class="mini-logo" aria-hidden="true">SAP</div>
+        <h1>Portal belum terhubung</h1>
+        <p id="errorText">URL Google Apps Script belum diatur di config.js.</p>
+        <button class="primary-action" id="retryButton" type="button">Coba lagi</button>
+      </div>
+    </section>
   </main>
   <script src="./config.js"></script>
   <script src="./app.js"></script>
