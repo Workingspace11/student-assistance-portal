@@ -8,6 +8,7 @@
   const installHelp = document.getElementById('installHelp');
   const errorText = document.getElementById('errorText');
   const retryButton = document.getElementById('retryButton');
+  const portalFrame = document.getElementById('portalFrame');
   const APP_URL = String((window.SAP_CONFIG && window.SAP_CONFIG.APP_URL) || '').trim();
   const validUrl = /^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec(?:[?#].*)?$/.test(APP_URL);
   const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
@@ -16,15 +17,26 @@
   let installMode = 'instructions';
 
   const goToPortal = () => {
-    if (!validUrl) {
-      splash.classList.add('hidden');
-      layer.classList.add('hidden');
-      errorText.textContent = 'URL Google Apps Script belum valid. Buka config.js di repository GitHub dan isi APP_URL dengan URL Web App yang berakhir /exec.';
-      errorLayer.classList.remove('hidden');
-      return;
-    }
-    window.location.replace(APP_URL);
-  };
+  if (!validUrl) {
+    splash.classList.add('hidden');
+    layer.classList.add('hidden');
+    errorText.textContent =
+      'URL Google Apps Script belum valid. Buka config.js di repository GitHub dan isi APP_URL dengan URL Web App yang berakhir /exec.';
+    errorLayer.classList.remove('hidden');
+    return;
+  }
+
+  splash.classList.add('hidden');
+  layer.classList.add('hidden');
+  errorLayer.classList.add('hidden');
+
+  portalFrame.style.display = 'block';
+
+  // Hindari memuat ulang portal jika sudah dimuat.
+  if (!portalFrame.src || portalFrame.src === 'about:blank') {
+    portalFrame.src = APP_URL;
+  }
+};
   const markSeen = () => { try { localStorage.setItem('sap_install_prompt_seen_v2', '1'); } catch (_) {} };
   const hasSeen = () => { try { return localStorage.getItem('sap_install_prompt_seen_v2') === '1'; } catch (_) { return false; } };
 
