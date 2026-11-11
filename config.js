@@ -6,5 +6,8 @@
   Jangan masukkan password, token, atau data rahasia di file ini.
 */
 window.SAP_CONFIG = {
-  APP_URL: "https://script.google.com/macros/s/AKfycbylSN4irb9q3nl0RuQEneZa7nUifqPhKKWiQ9johE1DHyC1gmhoJ_au_0A6KIfMaXTX/exec"
+  APP_URL: "https://script.google.com/macros/s/AKfycbylSN4irb9q3nl0RuQEneZa7nUifqPhKKWiQ9johE1DHyC1gmhoJ_au_0A6KIfMaXTX/exec",
+  // "pwa"      = portal tetap di alamat GitHub, Apps Script sebagai backend.
+  // "redirect" = perilaku lama (pindah ke alamat Apps Script). Ganti ke "redirect" untuk kembali seketika.
+  MODE: "redirect"
 };
